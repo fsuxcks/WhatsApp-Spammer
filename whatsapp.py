@@ -7,8 +7,6 @@ import shutil
 import logging
 import traceback
 from datetime import datetime,timezone,timedelta
-import subprocess
-import configparser
 os.system("cls")
 os.system(f"title WhatsApp Tool v{currentversion}")
 os.system("color 2")
@@ -16,11 +14,12 @@ print(f"[*] WhatsApp Tool by maxhack01 (t.me/emil_mmd) v{currentversion}")
 print("[*] Инициализация...")
 try:
     import pywhatkit as kit
-    import gspread
-    from oauth2client.service_account import ServiceAccountCredentials
-    from cryptography.fernet import Fernet
-    import json
-    import io
+    from selenium import webdriver
+    from selenium.webdriver.common.by import By
+    from selenium.webdriver.chrome.options import Options
+    from selenium.webdriver.chrome.service import Service
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
 except Exception as e:
     print("[!] Не удалось загрузить библиотеки. Попробуйте перезапустить.")
     time.sleep(10)
@@ -128,13 +127,6 @@ try:
         print(f"[+] Загружено номеров: {len(numbers)}")
         print(f"[+] Загружено сообщений: {len(messages)}")
         print(f"[+] Количество профилей: {amount}")
-        print("[+] Импортируем необходимые библиотеки...")
-        from selenium import webdriver
-        from selenium.webdriver.common.by import By
-        from selenium.webdriver.chrome.options import Options
-        from selenium.webdriver.chrome.service import Service
-        from selenium.webdriver.support.ui import WebDriverWait
-        from selenium.webdriver.support import expected_conditions as EC
 
 
         drivers = []
@@ -159,7 +151,7 @@ try:
         def startSelenium(i):
             profile_dirs = os.path.join(profile_dir, "profiles", f"wa_user{i}")
             options = Options()
-            #options.add_argument("--headless")
+            options.add_argument("--headless")
             options.add_argument("--disable-gpu")
             options.add_argument("--window-size=1000,700")
             options.add_argument("--log-level=1")
