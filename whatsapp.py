@@ -1,4 +1,4 @@
-currentversion = "0.83"
+currentversion = "0.8"
 import os
 import sys
 import time
