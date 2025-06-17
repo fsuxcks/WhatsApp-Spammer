@@ -72,7 +72,7 @@ try:
             os.system("cls")
             start(0)
             
-    def send_messages(numbers_file,min,max,wait_time):
+    def send_messages(,min,max,wait_time):
         os.system("cls")
         print(f"[*] WhatsApp Tool v{currentversion}")
         print(f"[+] Начинаем работу")
@@ -334,7 +334,7 @@ try:
                 time.sleep(3)
                 os.system("cls")
                 start(1)
-            send_messages(numbers_file="numbers.txt", min=mindelay, max=maxdelay, wait_time=waittime)
+            send_messages(min=mindelay, max=maxdelay, wait_time=waittime)
         if job == 2:
             try:
                 amount = int(input("[?] Введите количество аккаунтов: "))
