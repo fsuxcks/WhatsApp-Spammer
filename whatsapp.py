@@ -72,7 +72,7 @@ try:
             os.system("cls")
             start(0)
             
-    def send_messages(,min,max,wait_time):
+    def send_messages(min,max,wait_time):
         os.system("cls")
         print(f"[*] WhatsApp Tool v{currentversion}")
         print(f"[+] Начинаем работу")
