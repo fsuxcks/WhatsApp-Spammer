@@ -21,10 +21,9 @@ try:
     from selenium.webdriver.support.ui import WebDriverWait
     from selenium.webdriver.support import expected_conditions as EC
 except Exception as e:
-    print("[!] Не удалось загрузить библиотеки. Попробуйте перезапустить.")
-    time.sleep(10)
+    print("[!] Не удалось загрузить библиотеки. Необходимо установить зависимости.")
+    input()
     sys.exit()
-
 logging.basicConfig(
     filename='Logs.log',
     filemode='a',
@@ -361,9 +360,6 @@ try:
 
     start(job=job)
 
-except KeyboardInterrupt:
-    print("\n[+] Выход по Ctrl+C")
-    sys.exit()
 except Exception as e:
     print(f"[!] Произошла ошибка: {e}")
     error_message = traceback.format_exc()
