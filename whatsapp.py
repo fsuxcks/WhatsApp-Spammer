@@ -57,7 +57,7 @@ try:
         print("[+] Рассылка сообщений с нескольких номеров WhatsApp в фоновом режиме [2]")
         try:
             jobIn = int(input(">>> "))
-            if jobIn !=2 or jobIn != 3:
+            if jobIn !=2 and jobIn != 1:
                 print("[!] Неправильное значение.")
                 time.sleep(2)
                 os.system("cls")
