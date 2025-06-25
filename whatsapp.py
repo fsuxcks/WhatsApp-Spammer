@@ -57,15 +57,13 @@ try:
         print("[+] Рассылка сообщений с нескольких номеров WhatsApp в фоновом режиме [2]")
         try:
             jobIn = int(input(">>> "))
-            if jobIn == 1:
-                return 1
-            if jobIn == 2:
-                return 2
             if jobIn !=2 or jobIn != 3:
                 print("[!] Неправильное значение.")
                 time.sleep(2)
                 os.system("cls")
                 start(0)
+            else:
+                return jobIn
         except: 
             print("[!] Неправильное значение.")
             time.sleep(2)
@@ -208,7 +206,7 @@ try:
 
         def checkforbigdelay():
             chance = random.randint(1,100)
-            if chance > chanceofdelay or chance == chanceofdelay:
+            if chance > chanceofdelay:
                 return False
             else:
                 return True
